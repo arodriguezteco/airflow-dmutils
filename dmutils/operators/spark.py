@@ -12,7 +12,7 @@ class LowSparkSubmitOperator(SparkSubmitOperator):
             master="yarn",
             verbose=True,
             yarn_queue="AIRFLOW",
-            spark_binary="/bin/spark-submit22",
+            spark_binary="/bin/spark-submit",
             conf={
                 "spark.dynamicAllocation.enabled": "true",
                 "spark.dynamicAllocation.initialExecutors": "2",
