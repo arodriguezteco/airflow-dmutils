@@ -5,14 +5,17 @@ __all__ = ["LowSparkSubmitOperator"]
 class LowSparkSubmitOperator(SparkSubmitOperator):
     def __init__(
         self,
-        executor_cores="4",
-        executor_memory="8g",
-        num_executors="2",
-        master="yarn",
-        verbose=True,
-        yarn_queue="AIRFLOW",
-        spark_binary="/bin/spark-submit22",
-        conf=",".join(
+        **kwargs
+    ):
+        super().__init__(**kwargs)
+        self.executor_cores="4",
+        self.executor_memory="8g",
+        self.num_executors="2",
+        self.master="yarn",
+        self.verbose=True,
+        self.yarn_queue="AIRFLOW",
+        self.spark_binary="/bin/spark-submit22",
+        self.conf=",".join(
             [
                 "spark.dynamicAllocation.enabled=true",
                 "spark.dynamicAllocation.initialExecutors=2",
@@ -21,6 +24,3 @@ class LowSparkSubmitOperator(SparkSubmitOperator):
                 "spark.shuffle.service.enabled=true",
             ]
         ),
-        **kwargs
-    ):
-        super().__init__(**kwargs)
