@@ -20,6 +20,6 @@ class LowSparkSubmitOperator(SparkSubmitOperator):
                     "spark.dynamicAllocation.maxExecutors=8",
                     "spark.shuffle.service.enabled=true",
                 ]
-            )
+            ),
             **kwargs
         )
