@@ -7,7 +7,4 @@ setup(
     packages=find_packages(),
     author="Data Managment",
     author_email="DataManagementMKTn@teco.com.ar",
-    install_requires=[
-        "apache-airflow==1.10.10",
-    ],
 )
